@@ -8,14 +8,24 @@ export default function Dictionary(props) {
     let [results, setResults] = useState(null);
     let [loaded, setLoaded] = useState(false);
 
-     function handleResponse(response) {
+     function handleDictionaryResponse(response) {
          setResults(response.data);
-        }
+     }
+    
+    function handlePexelsResponse(response) {
+        console.log(response);
+    }
 
     function search() {
          // documentation: https://www.shecodes.io/learn/apis/dictionary
         let apiUrl = `https://api.shecodes.io/dictionary/v1/define?word=${keyword}&key=0f394coc58tc83ab43c50095f3bd3ad9`
-        axios.get(apiUrl).then(handleResponse);
+        axios.get(apiUrl).then(handleDictionaryResponse);
+
+        let pexelsApiKey =
+            "lsSBCbTYc4DrIJv8IsDsYDo9YYHFweH2KmOGhKW6ZmZmrsbbUqecBCnU";
+        let pexelsApiUrl =
+            `https://api.pexels.com/v1/search?query=${keyword}&per_page=1`;
+        axios.get(pexelsApiUrl).then(handlePexelsResponse);
         }
     
     function handleSubmit(event) {
