@@ -17,7 +17,7 @@ function App() {
         <footer className="App-footer">
             ✨This project was coded by <a href="https://www.linkedin.com/in/breannelyall" target="_blank" rel="noreferrer">Breanne Lyall</a> ✨ <a href="https://github.com/ShyloBreanne/dictionary-application" target="_blank" rel="noreferrer">Open-sourced on GitHub</a> and <a href="https://dictionary-app-brecodes.netlify.app" target="_blank" rel="noreferrer">hosted on Netlify</a>✨
             <br />
-          📷 <a href="https://www.pexels.com">Photos provided by Pexels</a> 📷
+          📷 <a href="https://www.pexels.com" target="_blank" rel="noreferrer">Photos provided by Pexels</a> 📷
           </footer>
         </div>
       </div>
