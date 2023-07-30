@@ -1,5 +1,5 @@
 .Dictionary h1 {
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
     margin-bottom: 20px;
 }
@@ -12,15 +12,21 @@
      margin: 20px 0;
 }
 
+
 .Dictionary input {
     width: 100%;
     border-radius: 6px;
     padding: 6px 10px;
     color: #333;
     border: 1px solid #ddd;
+    font-size: 24px;
 }
 
 .Dictionary .hint {
-    font-size: 12px;
+    font-size: 18px;
     margin-top: 5px;
+}
+
+.Dictionary .Oops {
+    text-align: center;
 }

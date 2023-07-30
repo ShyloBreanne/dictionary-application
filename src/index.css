@@ -1,5 +1,12 @@
 body {
-  background-color: #8FAE75;
+  font-family: 'GFS Neohellenic', sans-serif;
+ background: linear-gradient(179.1deg, rgb(247, 238, 238) -1.9%, rgb(247, 202, 201) 44.9%, rgb(145, 168, 208) 96.1%);
+}
+
+body,
+a,
+a:hover {
+    cursor: url(https://cur.cursors-4u.net/cursors/cur-11/cur1046.cur), progress;
 }
 
 code {

@@ -5,3 +5,8 @@
     margin-right: auto;
     margin-left: auto;
 }
+
+.Photos .img-fluid:hover {
+    filter: contrast(80%);
+    transform: scale(1.1);
+}

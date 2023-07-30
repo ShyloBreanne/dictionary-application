@@ -9,8 +9,14 @@ export default function Dictionary(props) {
     let [results, setResults] = useState(null);
     let [loaded, setLoaded] = useState(false);
     let [photos, setPhotos] = useState(null);
-
-     function handleDictionaryResponse(response) {
+    let [error, setError] = useState(false);
+    
+    function handleDictionaryResponse(response) {
+        if (response.data.status === "not_found") {
+            setError(true);
+            return;
+        }
+        setError(false);
          setResults(response.data);
      }
     
@@ -45,20 +51,35 @@ export default function Dictionary(props) {
         search();
     }
 
-    if (loaded) {
-         return (
+    if (loaded && !error) {
+        return (
             <div className="Dictionary">
-                 <section>
-                     <h1>What word would you like to look up?</h1>
+                <section>
+                    <h1>What word would you like to look up?</h1>
                     <form onSubmit={handleSubmit}>
-                        <input type="search" onChange={handleKeywordChange} defaultValue={props.defaultKeyword} />
+                        <input type="search" className="form-control input-focus" onChange={handleKeywordChange} defaultValue={props.defaultKeyword} />
                     </form>
                     <div className="hint">
                         suggested words: plant, halloween, chocolate...
                     </div>
                 </section>
-                 <Results results={results} />
-                 <Photos photos={photos} />
+                <Results results={results} />
+                <Photos photos={photos} />
+            </div>
+        );
+    } else if (loaded && error) {
+        return (
+            <div className="Dictionary">
+                <section>
+                    <h1>What word would you like to look up?</h1>
+                    <form onSubmit={handleSubmit}>
+                        <input type="search" className="form-control input-focus" onChange={handleKeywordChange} defaultValue={props.defaultKeyword} />
+                    </form>
+                    <div className="hint">
+                        suggested words: plant, halloween, chocolate...
+                    </div>
+                </section>
+                <h2 className="Oops">Oops! Check your spelling...</h2>
             </div>
         );
     } else {
